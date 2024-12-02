@@ -49,17 +49,26 @@
 
         <!-- Video Player -->
         <video id="player" controls>
-            <source src="{{file_url}}" type="video/mp4">
+            <source id="videoSource" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
         <!-- Additional Info -->
         <div class="mt-3 text-center">
-        </div>
             <p>If the video doesn't play, download it using the link below:</p>
-        <div onclick="lazyDownload()" class="col-lg-4 p-2 col-12 rounded-3xl bg-dark text-white text-center align-items-center hover:bg-gradient-to-r from-pink-500 to-violet-500 hover:shadow-md hover:shadow-gray-100 hover:translate-y-[-5px] transition transition-all duration-300 wow animate__animated animate__rubberBand">Download Now
-        
+        </div>
+        <div onclick="lazyDownload()" class="col-lg-4 p-2 col-12 rounded-3xl bg-dark text-white text-center align-items-center hover:bg-gradient-to-r from-pink-500 to-violet-500 hover:shadow-md hover:shadow-gray-100 hover:translate-y-[-5px] transition transition-all duration-300 wow animate__animated animate__rubberBand">
+            Download Now
         </div>
     </div>
+
+    <script>
+        // JavaScript to dynamically replace the video URL
+        window.onload = function() {
+            var fileUrl = "https://www.example.com/path/to/video.mp4"; // Replace with actual file URL dynamically
+            document.getElementById('videoSource').src = fileUrl;
+            document.getElementById('player').load();  // Reload video player with the new source
+        };
+    </script>
 </body>
 </html>
