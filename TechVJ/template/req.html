@@ -65,8 +65,8 @@
     <script>
         // JavaScript to dynamically replace the video URL
         window.onload = function() {
-            var fileUrl = "https://www.example.com/path/to/video.mp4"; // Replace with actual file URL dynamically
-            document.getElementById('videoSource').src = fileUrl;
+            var fileUrl = "{{file_Url}}"; // Replace with actual file URL dynamically
+            document.getElementById('videoSource').src = file_Url;
             document.getElementById('player').load();  // Reload video player with the new source
         };
     </script>
