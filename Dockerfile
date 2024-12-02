@@ -3,6 +3,7 @@
 # Ask Doubt on telegram @KingVJ01
 
 FROM python:3.10.8-slim-buster
+RUN pip install pytz
 
 RUN apt update && apt upgrade -y
 RUN apt install git -y
