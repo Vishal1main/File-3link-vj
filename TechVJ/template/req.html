@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player</title>
+    <title>TMR Player</title> <!-- Title added here -->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css">
     <style>
         body {
@@ -16,6 +16,7 @@
             align-items: center;
             flex-direction: column;
             min-height: 100vh;
+            padding: 10px;
         }
 
         .main {
@@ -23,7 +24,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            max-width: 600px;
+            max-width: 100%;
             width: 100%;
             text-align: center;
         }
@@ -84,7 +85,8 @@
 
         .button-groups {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             width: 100%;
             max-width: 500px;
             gap: 20px;
@@ -92,9 +94,8 @@
 
         .button-group {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-            flex: 1;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .button-group button {
@@ -120,9 +121,84 @@
         .button-group button:hover {
             background-color: #495057;
         }
+
+        /* Title Style */
+        .page-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: transparent;
+            background: linear-gradient(to right, #ff6f61, #ffcc00, #6a5acd, #00bfff, #ff1493);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Footer Style */
+        footer {
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ddd;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .downloadBtn .main-button {
+                max-width: 100%;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button-group button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .page-title {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 18px;
+            }
+            .button-group button {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .downloadBtn .main-button {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Page Title -->
+    <div class="page-title">
+        TMR Player
+    </div>
+
     <div class="main" id="main">
         <!-- Video Player -->
         <video id="player" controls crossorigin playsinline>
@@ -168,6 +244,13 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Tmr Botz. All rights reserved.</p>
+        <p><a href="https://Telegram.dog/Tmr_Developer">Developer</a> | <a href="https://Telegram.dog/Tmr_Botz">Join For More</a></p>
+    </footer>
+
     <script src="https://cdn.plyr.io/3.6.9/plyr.polyfilled.js"></script>
     <script>
         // Initialize Plyr
